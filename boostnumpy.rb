@@ -7,6 +7,8 @@ class Boostnumpy < Formula
   sha1 "632e5f6c60e1a8c8c0ceeca0a1e4003d5d084984"
 
   depends_on "cmake" => :build
+  depends_on "numpy" => :python
+  depends_on "boost"
 
   def install
     system "cmake", ".", *std_cmake_args
