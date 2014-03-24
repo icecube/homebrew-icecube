@@ -1,10 +1,10 @@
 require "formula"
 
 class Boostnumpy < Formula
-  homepage ""
-  url "http://code.icecube.wisc.edu/svn/sandbox/mwolf/tools/BoostNumpy/trunk", :using => :svn
-  version "1.0.0"
-  sha1 "9246890d5533444d556732426ea05632cce73a1f"
+  homepage "https://github.com/martwo/BoostNumpy"
+  url "http://icecube.wisc.edu/~mwolf/tools/BoostNumpy-0.1.0.tar.gz"
+  version "0.1.0"
+  sha1 "632e5f6c60e1a8c8c0ceeca0a1e4003d5d084984"
 
   depends_on "cmake" => :build
 
