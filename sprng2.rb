@@ -92,7 +92,7 @@ diff -ur sprng2.0.orig/SRC/make.INTEL sprng2.0/SRC/make.INTEL
  # Please include mpi header file path, if needed
  
 -CFLAGS = -O3 -DLittleEndian $(PMLCGDEF) $(MPIDEF) -D$(PLAT)  -I/usr/local/mpi/include -I/usr/local/mpi/build/LINUX/ch_p4/include
-+CFLAGS = -O3 -DLittleEndian -D$(PLAT) -fPIC
++CFLAGS = -O3 -DLittleEndian -D$(PLAT) -fPIC -IHOMEBREW_PREFIX/include
  CLDFLAGS =  -O3 
 -FFLAGS = -O3 $(PMLCGDEF) $(MPIDEF) -D$(PLAT)  -I/usr/local/mpi/include -I/usr/local/mpi/build/LINUX/ch_p4/include -I.
 +FFLAGS = -O3 -D$(PLAT) -I.
