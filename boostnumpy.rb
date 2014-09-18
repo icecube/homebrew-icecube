@@ -36,3 +36,17 @@ index 8f25e12..08f463b 100644
 +#define BOOST_NUMPY_LOG(msg)
  
  #endif // BOOST_NUMPY_DETAIL_LOGGING_HPP_INCLUDED
+diff --git a/include/boost/numpy/dstream/detail/loop_service.hpp b/include/boost/numpy/dstream/detail/loop_service.hpp
+index 7ed431a..369376b 100644
+--- a/include/boost/numpy/dstream/detail/loop_service.hpp
++++ b/include/boost/numpy/dstream/detail/loop_service.hpp
+@@ -64,7 +64,7 @@ struct max_loop_shape_selector
+     int const arr_loop_nd_;
+ };
+ 
+-bool operator>(max_loop_shape_selector const & lhs, max_loop_shape_selector const & rhs)
++inline bool operator>(max_loop_shape_selector const & lhs, max_loop_shape_selector const & rhs)
+ {
+     return (lhs.arr_loop_nd_ > rhs.arr_loop_nd_);
+ }
+
