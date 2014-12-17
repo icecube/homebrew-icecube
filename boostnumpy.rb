@@ -19,16 +19,32 @@ class Boostnumpy < Formula
 end
 
 __END__
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 57323f3..13f74bd 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -12,6 +12,10 @@
+ # http://www.boost.org/LICENSE_1_0.txt).
+ #
+ cmake_minimum_required(VERSION 2.8.3)
++if(CMAKE_VERSION VERSION_GREATER 2.8.11)
++    set(CMAKE_MACOSX_RPATH 1)
++    cmake_policy(SET CMP0042 NEW)
++endif(CMAKE_VERSION VERSION_GREATER 2.8.11)
+
+ # Choose CMAKE_BUILD_TYPE=Release if the user does not specify it.
+ if(DEFINED CMAKE_BUILD_TYPE)
 diff --git a/test/dstream_test_module.cpp b/test/dstream_test_module.cpp
-index e3b5264..0f15594 100644
+index e3b5264..3d949c7 100644
 --- a/test/dstream_test_module.cpp
 +++ b/test/dstream_test_module.cpp
-@@ -16,6 +16,7 @@
-  *        Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at
-  *        http://www.boost.org/LICENSE_1_0.txt).
+@@ -18,8 +18,8 @@
   */
-+#include <Python.h>
  #include <vector>
 
- #include <boost/shared_ptr.hpp>
+-#include <boost/shared_ptr.hpp>
+ #include <boost/python.hpp>
++#include <boost/shared_ptr.hpp>
 
+ #include <boost/numpy.hpp>
+ #include <boost/numpy/dstream.hpp>
