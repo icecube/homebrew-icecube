@@ -12,7 +12,8 @@ class SlalibC < Formula
     end
     system "make"
     lib.install 'libsla.a'
-    include.install 'slalib.h', 'slamac.h'
+    slainclude = include+'slalib'
+    slainclude.install  'slalib.h', 'slamac.h'
   end
 
   test do
