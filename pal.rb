@@ -2,6 +2,7 @@ require "formula"
 
 class Pal < Formula
   bottle do
+    root_url "http://code.icecube.wisc.edu/tools/bottles/"
     cellar :any
     sha256 "ce0e56c0554480817510f655aa4ffdea97c6fa03e74b7124c33f22275ecc461a" => :el_capitan
   end
