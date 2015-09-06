@@ -15,9 +15,11 @@ class Pal < Formula
 
   depends_on "erfa"
   # batteries not included
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool"  => :build
+  if (RUBY_PLATFORM =~ /darwin/)
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool"  => :build
+  end
 
   def install
     system "autoreconf", "--install", "--symlink", buildpath

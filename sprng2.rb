@@ -7,7 +7,9 @@ class Sprng2 < Formula
   sha256 'bcfa9e0501c4aba8f3e7bd7a728ae8d1e9ae771fc9d985d677f76f87b937454e'
   version "2.0a"
 
-  depends_on 'gmp'
+  if (RUBY_PLATFORM =~ /darwin/)
+    depends_on 'gmp'
+  end
 
   def patches
     # fixes the makefiles and inline assembly
