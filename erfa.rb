@@ -2,8 +2,8 @@ require "formula"
 
 class Erfa < Formula
   homepage "https://github.com/liberfa/erfa"
-  url "https://github.com/liberfa/erfa/releases/download/v1.0.1/erfa-1.0.1.tar.gz"
-  sha1 "6f1bd52691f9368d7237bb63490ea5e6402cb117"
+  url "https://github.com/liberfa/erfa/releases/download/v1.2.0/erfa-1.2.0.tar.gz"
+  sha256 "361bc9c5f783140aa337eba8379476ec45ec13627a8c839ccc1aaec104ad3316"
 
   def install
     system "./configure", "--disable-debug",
