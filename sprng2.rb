@@ -16,7 +16,7 @@ class Sprng2 < Formula
 
   def install
     ENV.deparallelize
-    system "rm", "SRC/pmlcg/gmp.h"
+    rm("SRC/pmlcg/gmp.ha")
     system "make", "src", "tests"
 
     # fix permissions
