@@ -2,7 +2,7 @@ require 'formula'
 
 class Pythia6 < Formula
   homepage 'http://root.cern.ch'
-  url 'ftp://root.cern.ch/root/pythia6.tar.gz'
+  url 'https://root.cern.ch/download/pythia6.tar.gz'
   sha1 '95d9d4af4584416680390f5b3812be743f36bd64'
   version '6.4.16'
 
