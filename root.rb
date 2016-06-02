@@ -2,7 +2,7 @@ require 'formula'
 
 class Root < Formula
   homepage 'http://root.cern.ch'
-  url 'ftp://root.cern.ch/root/root_v5.34.11.source.tar.gz'
+  url 'https://root.cern.ch/download/root_v5.34.11.source.tar.gz'
   version '5.34.11'
   sha1 '1bda865a38f05f6f447671d1904bd1ca52d42932'
   head 'https://github.com/root-mirror/root.git', :branch => 'v5-34-00-patches'
