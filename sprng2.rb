@@ -3,7 +3,6 @@ require 'formula'
 class Sprng2 < Formula
   homepage 'http://www.sprng.org/Version2.0/'
   url 'http://sprng.cs.fsu.edu/Version2.0/sprng2.0a.tgz'
-  sha1 '139ea3f9ab623131907ba86cb4c7cbe491a23f71'
   sha256 'bcfa9e0501c4aba8f3e7bd7a728ae8d1e9ae771fc9d985d677f76f87b937454e'
   version "2.0a"
 
