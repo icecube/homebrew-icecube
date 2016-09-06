@@ -4,7 +4,7 @@ class Boostnumpy < Formula
   homepage "https://github.com/martwo/BoostNumpy"
   url "https://github.com/martwo/BoostNumpy/archive/V0.2.2.tar.gz"
   version "0.2.2"
-  sha1 "1c93ee6352cd295bbf52269eb7d13f60e3643d8e"
+  sha256 '0e4a50f8f314e9027a7140d4c398db9bec31f72515dd6736d60b2e7b6e68384f'
   patch :p1, :DATA
 
   depends_on "cmake" => :build

@@ -3,7 +3,7 @@ require 'formula'
 class Cvmfs < Formula
   homepage ''
   url 'https://ecsft.cern.ch/dist/cvmfs/cvmfs-2.1.12/cvmfs-2.1.12.tar.gz'
-  sha1 '22701fd8ba294ddad847db30892c2399a3b2406f'
+  sha256 'aa3440ec5ff622733bd7e90610c7754814e6e56fca8fac27e5c3f71907ee80f8'
 
   depends_on 'cmake' => :build
   depends_on 'sqlite'
