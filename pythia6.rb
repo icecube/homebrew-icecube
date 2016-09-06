@@ -3,7 +3,7 @@ require 'formula'
 class Pythia6 < Formula
   homepage 'http://root.cern.ch'
   url 'https://root.cern.ch/download/pythia6.tar.gz'
-  sha1 '95d9d4af4584416680390f5b3812be743f36bd64'
+  sha256 'd613dcb27c905710e2f13a934913cc5545e3e5d0e477e580107385d9ef260056'
   version '6.4.16'
 
   depends_on :fortran
