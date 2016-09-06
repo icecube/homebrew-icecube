@@ -3,7 +3,7 @@ require 'formula'
 class SlalibC < Formula
   homepage 'http://www.starlink.rl.ac.uk/star/docs/sun67.htx/sun67.html'
   url 'http://code/tools/distfiles/slalib-c/slalib-c-0.0.tar.bz2'
-  sha1 '63ba09b9297f3263d3c0240df9efda64b4bd01bb'
+  sha256 '36799aa06788b6d54bcb53210b0c07687206bfc069274740118e1ef5c093a216'
 
   def install
     inreplace 'makefile' do |s|
