@@ -5,7 +5,6 @@ class Root < Formula
   url 'https://root.cern.ch/download/root_v5.34.11.source.tar.gz'
   version '5.34.11'
   sha256 '212b5a34367ba111b3c14ccfdb1e7c99720243482661f0d96794785c177eb648'
-  sha1 '1bda865a38f05f6f447671d1904bd1ca52d42932'
   head 'https://github.com/root-mirror/root.git', :branch => 'v5-34-00-patches'
 
   bottle do
