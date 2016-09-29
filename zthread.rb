@@ -6,6 +6,11 @@ class Zthread < Formula
   version "2.3.2"
   sha256 "950908b7473ac10abb046bd1d75acb5934344e302db38c2225b7a90bd1eda854"
 
+  bottle do
+    cellar :any
+    sha256 "80627b5ad4279019792e196a40a71681ede19512076f3d6e3372308fc4026d42" => :sierra
+  end
+               
   patch :DATA
 
   def install
