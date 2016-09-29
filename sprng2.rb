@@ -6,6 +6,11 @@ class Sprng2 < Formula
   sha256 'bcfa9e0501c4aba8f3e7bd7a728ae8d1e9ae771fc9d985d677f76f87b937454e'
   version "2.0a"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "7c9c081d9516a2cc3b130bc989e8cdf6db95d2ce5a778aa8e05ff41e86ecc298" => :sierra
+  end
+
   if (RUBY_PLATFORM =~ /darwin/)
     depends_on 'gmp'
   end
