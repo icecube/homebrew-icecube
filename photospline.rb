@@ -7,7 +7,7 @@ class Photospline < Formula
   head "https://github.com/cnweaver/photospline.git"
 
   depends_on "cmake" => :build
-  depends_on "homebrew/science/suite-sparse"
+  depends_on "suite-sparse"
   depends_on "cfitsio"
 
   def install
