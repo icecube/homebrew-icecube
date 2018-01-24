@@ -10,7 +10,7 @@ class Root < Formula
   depends_on 'xrootd' => :recommended
   depends_on 'fftw' => :optional
   depends_on :x11 => :recommended
-  depends_on :python
+  depends_on 'python'
   depends_on 'pythia6'
   depends_on 'gsl'
 

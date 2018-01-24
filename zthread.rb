@@ -1,9 +1,8 @@
 require "formula"
 
 class Zthread < Formula
-  homepage "http://zthread.sourceforge.net"
-  url "http://prdownloads.sourceforge.net/zthread/ZThread-2.3.2.tar.gz"
-  version "2.3.2"
+  homepage "http://zthread.sourceforge.io"
+  url "https://downloads.sourceforge.net/zthread/ZThread-2.3.2.tar.gz"
   sha256 "950908b7473ac10abb046bd1d75acb5934344e302db38c2225b7a90bd1eda854"
 
   bottle do

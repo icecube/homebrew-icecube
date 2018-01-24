@@ -10,8 +10,7 @@ class Pal < Formula
   end
 
   homepage "https://github.com/IceCube-SPNO/pal"
-  url "https://github.com/IceCube-SPNO/pal/archive/master.tar.gz"
-  version "0.9.1"
+  url "https://github.com/IceCube-SPNO/pal/archive/v0.9.1.tar.gz"
   sha256 "c60e8f6cf338a47978a6c1deffaff2f8e2bd7b8493c102020a1040e5495b1df6"
 
   depends_on "erfa"
