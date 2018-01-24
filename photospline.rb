@@ -1,4 +1,10 @@
 class Photospline < Formula
+  bottle do
+    root_url "http://code.icecube.wisc.edu/tools/bottles/"
+    cellar :any
+    sha256 "de676e677e34bad2ef4ade4f0fa134a17f6af264feae00d090a2ec16e73f14ea" => :high_sierra
+  end
+
   desc "Fit and evaluate tensor-product B-spline surfaces"
   homepage "https://github.com/cnweaver/photospline"
   url "https://github.com/cnweaver/photospline/archive/v2.0.0.tar.gz"
