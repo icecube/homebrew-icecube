@@ -1,8 +1,7 @@
 class Photospline < Formula
   desc "Fit and evaluate tensor-product B-spline surfaces"
   homepage "https://github.com/cnweaver/photospline"
-  version "2.0.0"
-  url "https://github.com/cnweaver/photospline/archive/v#{version}.tar.gz"
+  url "https://github.com/cnweaver/photospline/archive/v2.0.0.tar.gz"
   sha256 "d031c5f520cd49fff07b507765c13b0b7c61c06eaffa5249e99c1222b4c29774"
   head "https://github.com/cnweaver/photospline.git"
 

@@ -8,8 +8,8 @@ class Multinest < Formula
   head 'https://github.com/JohannesBuchner/MultiNest.git'
 
   depends_on 'cmake' => :build
-  depends_on :fortran
-  depends_on :mpi => [ :cc, :fortran, :optional ]
+  depends_on 'gcc'
+  depends_on 'open-mpi'
 
   patch :DATA
 
