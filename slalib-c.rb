@@ -20,9 +20,7 @@ class SlalibC < Formula
     system "true"
   end
 
-  def patches
-    DATA
-  end
+  patch :DATA
 end
 
 __END__

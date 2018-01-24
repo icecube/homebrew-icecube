@@ -12,7 +12,7 @@ class Pythia6 < Formula
     sha256 "c4cbfa937e47c342b589ce46267d2c25005c8c60a94b7f3e22b708b7a987c97b" => :sierra
   end
 
-  depends_on :fortran
+  depends_on 'gcc'
 
   patch :p0 do
 # create Makefile

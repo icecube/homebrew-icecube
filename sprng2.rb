@@ -15,10 +15,8 @@ class Sprng2 < Formula
     depends_on 'gmp'
   end
 
-  def patches
-    # fixes the makefiles and inline assembly
-    DATA
-  end
+  # fixes the makefiles and inline assembly
+  patch :DATA
 
   def install
     ENV.deparallelize
