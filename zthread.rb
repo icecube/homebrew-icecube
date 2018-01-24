@@ -2,12 +2,15 @@ require "formula"
 
 class Zthread < Formula
   homepage "http://zthread.sourceforge.io"
-  url "https://downloads.sourceforge.net/zthread/ZThread-2.3.2.tar.gz"
+  url "https://downloads.sourceforge.net/project/zthread/ZThread/2.3.2/ZThread-2.3.2.tar.gz"
   sha256 "950908b7473ac10abb046bd1d75acb5934344e302db38c2225b7a90bd1eda854"
 
   bottle do
+    root_url "http://code.icecube.wisc.edu/tools/bottles/"
     cellar :any
     sha256 "80627b5ad4279019792e196a40a71681ede19512076f3d6e3372308fc4026d42" => :sierra
+    sha256 "ab69f18ac3b06df63373d1f269bad6ed34e947cff781a5512cf1ff3ab9a05bfd" => :high_sierra
+
   end
                
   patch :DATA

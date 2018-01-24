@@ -9,6 +9,7 @@ class Rdmc < Formula
     root_url "http://code.icecube.wisc.edu/tools/bottles/"
     cellar :any
     sha256 "5a6ab27f17d6fa6dc2248b998ca08f807c52dbe1056e03ff51fc44529bb647f5" => :sierra
+    sha256 "13456848381994f17831f1e1e002393f22be727e2791b4f0dcf99a2a6686f8aa" => :high_sierra
   end
                
   def install
