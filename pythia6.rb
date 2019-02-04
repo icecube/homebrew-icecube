@@ -5,8 +5,6 @@ class Pythia6 < Formula
   url 'ftp://root.cern.ch/root/pythia6.tar.gz'
   version '6.4.16'
 
-  depends_on :fortran
-
   def patches
     { :p0 => [ "https://gist.github.com/nega0/7553410/raw" ,  # create Makefile
                "https://gist.github.com/nega0/7553457/raw" ,  # create main.c
