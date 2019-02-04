@@ -4,7 +4,6 @@ class Multinest < Formula
   homepage 'http://www.mrao.cam.ac.uk/software/multinest/'
   url 'https://github.com/JohannesBuchner/MultiNest/archive/96249c628c1d67ccdcd8d235fd19191fdf011c42.tar.gz'
   version '3.8'
-  sha1 '68a03cbbfe3bb29fab1fec6026196766eb306fbd'
   head 'https://github.com/JohannesBuchner/MultiNest.git'
 
   depends_on 'cmake' => :build
