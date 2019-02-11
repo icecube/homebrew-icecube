@@ -12,7 +12,7 @@ class Sprng2 < Formula
 
   def patches
     # fixes the makefiles and inline assembly
-    DATA
+    :DATA
   end
 
   def install
