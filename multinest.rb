@@ -3,6 +3,7 @@ require "formula"
 class Multinest < Formula
   homepage 'http://www.mrao.cam.ac.uk/software/multinest/'
   url 'https://github.com/JohannesBuchner/MultiNest/archive/96249c628c1d67ccdcd8d235fd19191fdf011c42.tar.gz'
+  sha256 98941dc25670fa4dab15a15d79587799c7be6e1a07103d837ea9102cd11aaca5
   version '3.8'
   head 'https://github.com/JohannesBuchner/MultiNest.git'
 
