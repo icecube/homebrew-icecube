@@ -1,15 +1,15 @@
 require 'formula'
 
-class Root < Formula
+class RootAT5 < Formula
   homepage 'http://root.cern.ch'
-  url 'https://root.cern.ch/download/root_v5.34.11.source.tar.gz'
-  version '5.34.11'
-  sha256 '212b5a34367ba111b3c14ccfdb1e7c99720243482661f0d96794785c177eb648'
+  url 'https://root.cern.ch/download/root_v5.34.38.source.tar.gz'
+  version '5.34.38'
+  sha256 '2c3bda69601d94836bdd88283a6585b4774eafc813deb6aa348df0af2922c4d2'
   head 'https://github.com/root-mirror/root.git', :branch => 'v5-34-00-patches'
 
-  depends_on 'xrootd' => :recommended
-  depends_on 'fftw' => :optional
-  depends_on :x11 => :recommended
+  depends_on 'xrootd'  => :recommended
+  depends_on 'fftw'    => :optional
+  depends_on :x11      => :optional
   depends_on 'python'
   depends_on 'pythia6'
   depends_on 'gsl'
