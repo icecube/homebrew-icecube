@@ -7,8 +7,9 @@ class CmakeAT32 < Formula
 
   bottle do
     cellar :any_skip_relocation
-    root_url "http://code.icecube.wisc.edu/tools/bottles/"
+    root_url "http://code.icecube.wisc.edu/tools/bottles"
     sha256 "17aa2ee6f4397d9121bbd485103ac7b5f987913e979b81bf251b40992470bc5e" => :high_sierra
+    sha256 "c3c3b845a30978e505126b3fa4a1312d1c721f208a1c87f34ba310a2e9ec110f" => :mojave
   end
 
   option "without-docs", "Don't build man pages"
@@ -19,8 +20,6 @@ class CmakeAT32 < Formula
   # The `with-qt` GUI option was removed due to circular dependencies if
   # CMake is built with Qt support and Qt is built with MySQL support as MySQL uses CMake.
   # For the GUI application please instead use `brew cask install cmake`.
-
-  needs :cxx11
 
   def install
     ENV.cxx11 if MacOS.version < :mavericks
