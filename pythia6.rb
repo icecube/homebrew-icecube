@@ -10,6 +10,7 @@ class Pythia6 < Formula
     root_url "http://code.icecube.wisc.edu/tools/bottles/"
     cellar :any
     sha256 "c4cbfa937e47c342b589ce46267d2c25005c8c60a94b7f3e22b708b7a987c97b" => :sierra
+    sha256 "172116bf5100a0fb994bc59791cf1da07db0896ef7bdcea66d9c4af3b585641d" => :mojave
   end
 
   depends_on 'gcc'
@@ -38,6 +39,7 @@ class Pythia6 < Formula
   def install
     ENV['FFLAGS'] = "-m64 -fPIC"
     ENV['PREFIX'] = "#{prefix}"
+    ENV['FC'] = "gfortran"
     system "make", "install"
   end
 
