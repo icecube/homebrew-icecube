@@ -7,6 +7,8 @@ class Pal < Formula
     sha256 "dc8d557cb13acdcfbf5d8db0f121b962e4b9b02aca6802c857c6fe11a47a3a82" => :sierra
     sha256 "ce0e56c0554480817510f655aa4ffdea97c6fa03e74b7124c33f22275ecc461a" => :el_capitan
     sha256 "588d8843a34f04a6d8b20757084f7282c49c34b41ad038ac073c64827cf0da2d" => :high_sierra
+    rebuild 1
+    sha256 "fc270082b3e2af5f6923bac32f42b10bb8af2eee8829af22b149cf584aa6bd00" => :mojave
   end
 
   homepage "https://github.com/IceCube-SPNO/pal"
