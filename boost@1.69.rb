@@ -8,9 +8,8 @@ class BoostAT169 < Formula
 
   bottle do
     cellar :any
-    sha256 "8089ad2fdc0edffcd0222043fda9a99bf82abf30f334305b9068fbef85b44893" => :mojave
-    sha256 "57b8e7c324620079499dfab19f894d7d2929d192f375ed9f09ebbff55c97f9f6" => :high_sierra
-    sha256 "98655462f9bf15f157f07fd27926d5adceb7fa3e966dd1ed5a096b68b8099474" => :sierra
+    root_url "https://github.com/fiedl/homebrew-icecube/releases/download/boost-1.69.0_2/"
+    sha256 "bef69060e15160aee3aad8b875204bb14af0f8d3e09bb16d08866c8a0c2e502f" => :mojave
   end
 
   depends_on "icu4c"
