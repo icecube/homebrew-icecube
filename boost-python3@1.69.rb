@@ -7,13 +7,11 @@ class BoostPython3AT169 < Formula
 
   bottle do
     cellar :any
-    rebuild 1
-    sha256 "b9e02f1dd677ceceda95c9aa3575349bd3018660d4e886be62b7ed6a5d7477b5" => :mojave
-    sha256 "791e187908f45d3a1353e9f69838c8a5d66ade9e4d410d2f6f6768d8d20d48e3" => :high_sierra
-    sha256 "ee30161bc4d164d6f92b2150a37ef1964a9c2cd24510147bcfd48103e7903887" => :sierra
+    root_url "https://github.com/fiedl/homebrew-icecube/releases/download/boost-1.69.0_2/"
+    sha256 "7e07eb4a74d834b82976f5e6335779c98d6c57bf62eb6b34f747d43b258af254" => :mojave
   end
 
-  depends_on "boost"
+  depends_on "boost@1.69"
   depends_on "python"
 
   resource "numpy" do
