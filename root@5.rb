@@ -15,7 +15,6 @@ class RootAT5 < Formula
   depends_on 'cmake'   => :build
   depends_on 'xrootd'  => :recommended
   depends_on 'fftw'    => :optional
-  depends_on :x11      => :optional
   depends_on 'python'
   depends_on 'pythia6'
   depends_on 'gsl'
