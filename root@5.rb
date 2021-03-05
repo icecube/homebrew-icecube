@@ -48,7 +48,9 @@ class RootAT5 < Formula
            "--etcdir=#{prefix}/etc/root",
            "--mandir=#{man}" ] * ' '
 
-    if build.without? 'x11'
+    if build.with? 'x11'
+      depends_on "libx11"
+    else
       args = [ args, '--disable-x11' ] * ' '
     end
 

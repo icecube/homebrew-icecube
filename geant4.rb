@@ -11,10 +11,10 @@ class Geant4 < Formula
   option "without-multithreaded", "Build without multithreading support"
 
   depends_on "cmake" => :run
-  depends_on :x11
   depends_on "qt" => :optional
   depends_on "xerces-c" if build.with? "gdml"
   depends_on "linuxbrew/xorg/glu" unless OS.mac?
+  depends_on "libx11"
 
   resource "G4NDL" do
     url "http://geant4.cern.ch/support/source/G4NDL.4.5.tar.gz"
