@@ -1,38 +1,42 @@
-require "formula"
-
 class Multinest < Formula
-  homepage 'https://www.mrao.cam.ac.uk/software/multinest/'
-  url 'https://github.com/JohannesBuchner/MultiNest/archive/96249c628c1d67ccdcd8d235fd19191fdf011c42.tar.gz'
-  version '3.8'
-  sha256 '98941dc25670fa4dab15a15d79587799c7be6e1a07103d837ea9102cd11aaca5'
-  head 'https://github.com/JohannesBuchner/MultiNest.git'
+  desc "Bayesian inference tool"
+  homepage "https://www.astro.phy.cam.ac.uk/research/ResearchFacilities/software-for-astrophyiscs"
+  url "https://github.com/JohannesBuchner/MultiNest/archive/96249c628c1d67ccdcd8d235fd19191fdf011c42.tar.gz"
+  version "3.8"
+  sha256 "98941dc25670fa4dab15a15d79587799c7be6e1a07103d837ea9102cd11aaca5"
+  head "https://github.com/JohannesBuchner/MultiNest.git"
 
-  depends_on 'cmake'    => :build
-  depends_on 'gcc'      => :build
-  depends_on 'open-mpi' => :optional
+  depends_on "cmake"    => :build
+  depends_on "gcc"      => :build
+  depends_on "open-mpi" => :optional
 
   patch :DATA
 
   def install
     ENV.deparallelize
 
-    system 'cmake', '.', *std_cmake_args
-    system 'make'
-    system 'make', 'install'
+    system "cmake", ".", *std_cmake_args
+    system "make"
+    system "make", "install"
 
     # documentation is in the form of a README
-    doc.install('README')
+    doc.install("README")
 
     # the license agreement
-    doc.install('LICENCE')
-    doc.install('license.pdf')
+    doc.install("LICENCE")
+    doc.install("license.pdf")
   end
 
-  def caveats; <<-EOS.undent
-    By installing MultiNest, you are agreeing to its licence. After the formula
-    has been installed, the README and LICENCE files can be found in #{doc}.
-    The examples are installed to #{HOMEBREW_PREFIX}/share/MultiNest.
+  def caveats
+    <<~EOS
+      By installing MultiNest, you are agreeing to its licence. After the formula
+      has been installed, the README and LICENCE files can be found in #{doc}.
+      The examples are installed to #{HOMEBREW_PREFIX}/share/MultiNest.
     EOS
+  end
+
+  test do
+    system "true"
   end
 end
 
