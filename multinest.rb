@@ -4,6 +4,7 @@ class Multinest < Formula
   url "https://github.com/JohannesBuchner/MultiNest/archive/96249c628c1d67ccdcd8d235fd19191fdf011c42.tar.gz"
   version "3.8"
   sha256 "98941dc25670fa4dab15a15d79587799c7be6e1a07103d837ea9102cd11aaca5"
+  revision 1
   head "https://github.com/JohannesBuchner/MultiNest.git"
 
   depends_on "cmake"    => :build
@@ -186,3 +187,117 @@ index 89cefb2..134b15f 100755
  		endif
  		setBlk=.false.
  	endif
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8f75cf5..9a1cc67 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8)
++cmake_minimum_required(VERSION 3.4)
+ project(multinest Fortran C CXX)
+ 
+ # By default CMake will install MultiNest to /usr/local on Linux/Mac
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 600da86..26636e0 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8) 
++cmake_minimum_required(VERSION 3.4)
+ 
+ #=============================================================================
+ # Copyright 2012 Brian Kloppenborg
+diff --git a/src/example_ackley/CMakeLists.txt b/src/example_ackley/CMakeLists.txt
+index 6f50ba2..f389c29 100644
+--- a/src/example_ackley/CMakeLists.txt
++++ b/src/example_ackley/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8) 
++cmake_minimum_required(VERSION 3.4)
+ 
+ # A typical CMake file for a Fortran program will look like this:
+ #
+diff --git a/src/example_eggbox_C++/CMakeLists.txt b/src/example_eggbox_C++/CMakeLists.txt
+index 9293f0e..d11b91f 100644
+--- a/src/example_eggbox_C++/CMakeLists.txt
++++ b/src/example_eggbox_C++/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8) 
++cmake_minimum_required(VERSION 3.4)
+ 
+ # In a normal application you would do:
+ # FIND_LIBRARY(MultiNest)
+diff --git a/src/example_eggbox_C/CMakeLists.txt b/src/example_eggbox_C/CMakeLists.txt
+index 4295eb5..ff709c7 100644
+--- a/src/example_eggbox_C/CMakeLists.txt
++++ b/src/example_eggbox_C/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8) 
++cmake_minimum_required(VERSION 3.4)
+ 
+ # In a normal application you would do:
+ # FIND_LIBRARY(MultiNest)
+diff --git a/src/example_gauss_shell/CMakeLists.txt b/src/example_gauss_shell/CMakeLists.txt
+index bdbccf5..609d276 100644
+--- a/src/example_gauss_shell/CMakeLists.txt
++++ b/src/example_gauss_shell/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8) 
++cmake_minimum_required(VERSION 3.4)
+ 
+ # A typical CMake file for a Fortran program will look like this:
+ #
+diff --git a/src/example_gaussian/CMakeLists.txt b/src/example_gaussian/CMakeLists.txt
+index a60d71a..15fcc52 100644
+--- a/src/example_gaussian/CMakeLists.txt
++++ b/src/example_gaussian/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8) 
++cmake_minimum_required(VERSION 3.4)
+ 
+ # A typical CMake file for a Fortran program will look like this:
+ #
+diff --git a/src/example_himmelblau/CMakeLists.txt b/src/example_himmelblau/CMakeLists.txt
+index cce939c..66cebd9 100644
+--- a/src/example_himmelblau/CMakeLists.txt
++++ b/src/example_himmelblau/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8) 
++cmake_minimum_required(VERSION 3.4)
+ 
+ # A typical CMake file for a Fortran program will look like this:
+ #
+diff --git a/src/example_obj_detect/CMakeLists.txt b/src/example_obj_detect/CMakeLists.txt
+index 837e08e..7bd1c5f 100644
+--- a/src/example_obj_detect/CMakeLists.txt
++++ b/src/example_obj_detect/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8) 
++cmake_minimum_required(VERSION 3.4)
+ 
+ # A typical CMake file for a Fortran program will look like this:
+ #
+diff --git a/src/example_rosenbrock/CMakeLists.txt b/src/example_rosenbrock/CMakeLists.txt
+index 56e1244..4447fe8 100644
+--- a/src/example_rosenbrock/CMakeLists.txt
++++ b/src/example_rosenbrock/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.8) 
++cmake_minimum_required(VERSION 3.4)
+ 
+ # A typical CMake file for a Fortran program will look like this:
+ #
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 26636e0..3ee871f 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -116,6 +113,9 @@ else()
+     SET(MultiNest_LIBRARIES multinest_mpi_shared)
+ endif ()
+ 
++# Relax gfortran's strict type checking
++set_source_files_properties( nested.F90 PROPERTIES COMPILE_FLAGS -fallow-argument-mismatch )
++
+ # ============================
+ # After compilation, copy the Fortran modules into the 'modules' directory.
+ # ============================
