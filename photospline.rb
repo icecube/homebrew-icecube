@@ -1,14 +1,9 @@
 class Photospline < Formula
   desc "Fit and evaluate tensor-product B-spline surfaces"
   homepage "https://github.com/cnweaver/photospline"
-  url "https://github.com/cnweaver/photospline/archive/v2.0.0.tar.gz"
-  sha256 "d031c5f520cd49fff07b507765c13b0b7c61c06eaffa5249e99c1222b4c29774"
+  url "https://github.com/cnweaver/photospline/archive/v2.0.7.tar.gz"
+  sha256 "59a3607c4aa036c55bcd233e8a0ec11575bd74173f3b4095cc6a77aa50baebcd"
   head "https://github.com/cnweaver/photospline.git"
-
-  bottle do
-    root_url "http://code.icecube.wisc.edu/tools/bottles/"
-    sha256 cellar: :any, high_sierra: "de676e677e34bad2ef4ade4f0fa134a17f6af264feae00d090a2ec16e73f14ea"
-  end
 
   depends_on "cmake" => :build
   depends_on "cfitsio"
