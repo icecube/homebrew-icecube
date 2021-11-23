@@ -1,0 +1,19 @@
+name: Test Homebrew Formula
+on: 
+  push:
+    branch:
+      master
+jobs:
+  Test:
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-10.15, macos-11]
+    steps:
+      - name: Tap icecube 
+        run: brew tap icecube/homebrew-icecube
+      - name: Brew Install
+        run: brew install --build-from-source cppzmq erfa pal photospline sprng2
+      - name: Brew Test
+        run: brew test photospline sprng2
