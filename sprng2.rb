@@ -30,7 +30,19 @@ class Sprng2 < Formula
   end
 
   test do
-    system "true"
+    (testpath/"test.cxx").write <<-EOS
+    #define SIMPLE_SPRNG
+    #include "sprng/sprng.h"
+    int main()
+    {
+      init_sprng(DEFAULT_RNG_TYPE,1,SPRNG_DEFAULT);
+      sprng();
+      isprng();
+    }
+    EOS
+
+    system ENV.cxx, "-o", "test", "test.cxx", "-L#{lib}", "-lsprng"
+    system "./test"
   end
 end
 
