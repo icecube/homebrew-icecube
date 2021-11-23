@@ -14,6 +14,6 @@ jobs:
       - name: Tap icecube 
         run: brew tap icecube/homebrew-icecube
       - name: Brew Install
-        run: brew install --build-from-source cppzmq erfa pal photospline sprng2
+        run: brew install --build-from-source cppzmq erfa pal photospline sprng2 nuflux
       - name: Brew Test
-        run: brew test photospline sprng2
+        run: brew test photospline sprng2 nuflux
