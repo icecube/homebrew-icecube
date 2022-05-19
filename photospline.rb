@@ -5,6 +5,7 @@ class Photospline < Formula
   sha256 "bd6c58df8893917909b79ef2510a2043f909fbb7020bdace328d4d36e0222b60"
 
   depends_on "cmake" => :build
+  depends_on "python"
   depends_on "cfitsio"
   depends_on "suite-sparse"
   depends_on "numpy"
