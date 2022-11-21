@@ -1,7 +1,7 @@
 class Geant4 < Formula
   desc "Simulation toolkit for particle transport through matter"
-  homepage "http://geant4.cern.ch"
-  url "http://geant4.cern.ch/support/source/geant4.10.03.p03.tar.gz"
+  homepage "https://geant4.web.cern.ch/"
+  url "https://cern.ch/geant4-data/releases/geant4.10.03.p03.tar.gz"
   version "10.3.3"
   sha256 "a164f49c038859ab675eec474d08c9d02be8c4be9c0c2d3aa8e69adf89e1e138"
 
@@ -10,11 +10,11 @@ class Geant4 < Formula
   option "with-usolids", "Use USolids (experimental)"
   option "without-multithreaded", "Build without multithreading support"
 
-  depends_on "cmake" => :run
-  depends_on "qt" => :optional
-  depends_on "xerces-c" if build.with? "gdml"
-  depends_on "linuxbrew/xorg/glu" unless OS.mac?
+  depends_on "cmake"
   depends_on "libx11"
+  depends_on "xerces-c" if build.with? "gdml"
+  depends_on "qt" => :optional
+  depends_on "linuxbrew/xorg/glu" unless OS.mac?
 
   resource "G4NDL" do
     url "http://geant4.cern.ch/support/source/G4NDL.4.5.tar.gz"
