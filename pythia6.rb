@@ -1,6 +1,6 @@
 class Pythia6 < Formula
   desc "CERN's Pythia6 patched for IceCube"
-  homepage "http://root.cern.ch"
+  homepage "https://root.cern.ch"
   url "https://root.cern.ch/download/pythia6.tar.gz"
   version "6.4.16"
   sha256 "d613dcb27c905710e2f13a934913cc5545e3e5d0e477e580107385d9ef260056"
