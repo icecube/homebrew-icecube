@@ -5,7 +5,7 @@ class Multinest < Formula
   version "3.8"
   sha256 "98941dc25670fa4dab15a15d79587799c7be6e1a07103d837ea9102cd11aaca5"
   revision 1
-  head "https://github.com/JohannesBuchner/MultiNest.git"
+  head "https://github.com/JohannesBuchner/MultiNest.git", branch: "master"
 
   depends_on "cmake"    => :build
   depends_on "gcc"      => :build
