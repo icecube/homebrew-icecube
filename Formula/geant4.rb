@@ -12,7 +12,7 @@ class Geant4 < Formula
 
   depends_on "cmake"
   depends_on "libx11"
-  depends_on "xerces-c" if build.with? "gdml"
+  depends_on "xerces-c"
   depends_on "qt" => :optional
   depends_on "linuxbrew/xorg/glu" unless OS.mac?
 
