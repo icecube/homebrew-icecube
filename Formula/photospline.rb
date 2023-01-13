@@ -1,8 +1,8 @@
 class Photospline < Formula
   desc "Fit and evaluate tensor-product B-spline surfaces"
   homepage "https://github.com/icecube/photospline"
-  url "https://github.com/icecube/photospline/archive/v2.1.0.tar.gz"
-  sha256 "bd6c58df8893917909b79ef2510a2043f909fbb7020bdace328d4d36e0222b60"
+  url "https://github.com/icecube/photospline/archive/v2.1.1.tar.gz"
+  sha256 "0a0dae8e1b994a35be23896982bd572fa97c617ad55a99b3da34782ad9435de8"
 
   depends_on "cmake" => :build
   depends_on "cfitsio"
