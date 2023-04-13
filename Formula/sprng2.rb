@@ -47,23 +47,9 @@ class Sprng2 < Formula
 end
 
 __END__
-diff -ur sprng2.0.orig/make.CHOICES sprng2.0/make.CHOICES
---- sprng2.0.orig/make.CHOICES	1999-06-29 11:42:11.000000000 -0500
-+++ sprng2.0/make.CHOICES	2013-10-29 19:13:35.000000000 -0500
-@@ -62,8 +62,8 @@
- # comment out if you want to exclude generator pmlcg which needs libgmp 
- #---------------------------------------------------------------------------
- 
--PMLCGDEF = -DUSE_PMLCG
--GMPLIB = -lgmp
-+#PMLCGDEF = -DUSE_PMLCG
-+#GMPLIB = -lgmp
- 
- ############################################################################
- 
-diff -ur sprng2.0.orig/Makefile sprng2.0/Makefile
---- sprng2.0.orig/Makefile	1999-06-29 11:42:10.000000000 -0500
-+++ sprng2.0/Makefile	2013-10-29 19:20:49.000000000 -0500
+diff -ur sprng2.0.old/Makefile sprng2.0/Makefile
+--- sprng2.0.old/Makefile	1999-06-29 12:42:10
++++ sprng2.0/Makefile	2023-04-12 21:29:39
 @@ -26,6 +26,8 @@
  
  all : src examples tests
@@ -73,9 +59,9 @@ diff -ur sprng2.0.orig/Makefile sprng2.0/Makefile
  src :
  	(cd SRC; $(MAKE) ; cd ..)
  
-diff -ur sprng2.0.orig/SRC/make.GENERIC sprng2.0/SRC/make.GENERIC
---- sprng2.0.orig/SRC/make.GENERIC	1999-06-29 11:42:11.000000000 -0500
-+++ sprng2.0/SRC/make.GENERIC	2013-10-29 19:19:46.000000000 -0500
+diff -ur sprng2.0.old/SRC/make.GENERIC sprng2.0/SRC/make.GENERIC
+--- sprng2.0.old/SRC/make.GENERIC	1999-06-29 12:42:11
++++ sprng2.0/SRC/make.GENERIC	2023-04-12 21:29:39
 @@ -26,7 +26,7 @@
  # Try adding: -DGENERIC to CFLAGS. This can improve speed, but may give
  # incorrect values. Check with 'checksprng' to see if it works.
@@ -85,9 +71,9 @@ diff -ur sprng2.0.orig/SRC/make.GENERIC sprng2.0/SRC/make.GENERIC
  CLDFLAGS = -O
  FFLAGS = -O $(PMLCGDEF) $(MPIDEF)
  F77LDFLAGS = -O
-diff -ur sprng2.0.orig/SRC/make.INTEL sprng2.0/SRC/make.INTEL
---- sprng2.0.orig/SRC/make.INTEL	1999-06-29 11:42:11.000000000 -0500
-+++ sprng2.0/SRC/make.INTEL	2013-10-29 19:19:25.000000000 -0500
+diff -ur sprng2.0.old/SRC/make.INTEL sprng2.0/SRC/make.INTEL
+--- sprng2.0.old/SRC/make.INTEL	1999-06-29 12:42:11
++++ sprng2.0/SRC/make.INTEL	2023-04-12 21:29:39
 @@ -6,8 +6,8 @@
  CC = gcc
  CLD = $(CC)
@@ -118,9 +104,9 @@ diff -ur sprng2.0.orig/SRC/make.INTEL sprng2.0/SRC/make.INTEL
  F77LDFLAGS =  -O3 
  
  CPP = cpp -P
-diff -ur sprng2.0.orig/SRC/pmlcg/Makefile sprng2.0/SRC/pmlcg/Makefile
---- sprng2.0.orig/SRC/pmlcg/Makefile	1999-06-29 11:42:11.000000000 -0500
-+++ sprng2.0/SRC/pmlcg/Makefile	2013-10-29 19:17:09.000000000 -0500
+diff -ur sprng2.0.old/SRC/pmlcg/Makefile sprng2.0/SRC/pmlcg/Makefile
+--- sprng2.0.old/SRC/pmlcg/Makefile	1999-06-29 12:42:11
++++ sprng2.0/SRC/pmlcg/Makefile	2023-04-12 21:29:39
 @@ -23,7 +23,7 @@
  all : pmlcg.o
  
@@ -130,9 +116,9 @@ diff -ur sprng2.0.orig/SRC/pmlcg/Makefile sprng2.0/SRC/pmlcg/Makefile
  	$(CC) -c $(CFLAGS)  $(FFXN) $(INLINEOPT) pmlcg.c -I$(SRCDIR)
  
  clean :
-diff -ur sprng2.0.orig/SRC/pmlcg/longlong.h sprng2.0/SRC/pmlcg/longlong.h
---- sprng2.0.orig/SRC/pmlcg/longlong.h	1999-06-29 11:42:11.000000000 -0500
-+++ sprng2.0/SRC/pmlcg/longlong.h	2013-10-29 19:21:47.000000000 -0500
+diff -ur sprng2.0.old/SRC/pmlcg/longlong.h sprng2.0/SRC/pmlcg/longlong.h
+--- sprng2.0.old/SRC/pmlcg/longlong.h	1999-06-29 12:42:11
++++ sprng2.0/SRC/pmlcg/longlong.h	2023-04-12 21:29:39
 @@ -439,8 +439,7 @@
  
  #if (defined (__i386__) || defined (__i486__)) && W_TYPE_SIZE == 32
@@ -153,3 +139,275 @@ diff -ur sprng2.0.orig/SRC/pmlcg/longlong.h sprng2.0/SRC/pmlcg/longlong.h
  	   : "=r" ((USItype)(sh)),					\
  	     "=&r" ((USItype)(sl))					\
  	   : "0" ((USItype)(ah)),					\
+diff -ur sprng2.0.old/SRC/pmlcg/pmlcg.c sprng2.0/SRC/pmlcg/pmlcg.c
+--- sprng2.0.old/SRC/pmlcg/pmlcg.c	1999-06-29 12:42:11
++++ sprng2.0/SRC/pmlcg/pmlcg.c	2023-04-12 21:29:39
+@@ -32,6 +32,7 @@
+ #include "pmlcg.h"
+ #include "gmp.h"
+ #include "basic.h"
++#include "store.h"
+ #include <math.h>
+ 
+ #define init_rng pmlcg_init_rng
+diff -ur sprng2.0.old/SRC/primes_32.c sprng2.0/SRC/primes_32.c
+--- sprng2.0.old/SRC/primes_32.c	1999-06-29 12:42:11
++++ sprng2.0/SRC/primes_32.c	2023-04-12 21:29:39
+@@ -1,5 +1,6 @@
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include "primes_32.h"
+ #include "primelist_32.h"
+ 
+diff -ur sprng2.0.old/SRC/primes_64.c sprng2.0/SRC/primes_64.c
+--- sprng2.0.old/SRC/primes_64.c	1999-06-29 12:42:11
++++ sprng2.0/SRC/primes_64.c	2023-04-12 21:29:39
+@@ -1,5 +1,6 @@
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include "primes_64.h"
+ #include "primelist_64.h"
+ 
+diff -ur sprng2.0.old/SRC/sprng/sprng.c sprng2.0/SRC/sprng/sprng.c
+--- sprng2.0.old/SRC/sprng/sprng.c	1999-06-29 12:42:10
++++ sprng2.0/SRC/sprng/sprng.c	2023-04-12 21:29:39
+@@ -24,6 +24,7 @@
+ #include "memory.h"
+ #include "sprng.h"
+ #include "interface.h"
++#include "store.h"
+ 
+ #include "lfg/lfg.h"
+ #include "lcg/lcg.h"
+diff -ur sprng2.0.old/TESTS/chisquare.c sprng2.0/TESTS/chisquare.c
+--- sprng2.0.old/TESTS/chisquare.c	1999-06-29 12:42:11
++++ sprng2.0/TESTS/chisquare.c	2023-04-12 21:38:37
+@@ -3,6 +3,8 @@
+ **********************************************************/
+ 
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include <math.h>
+ #include "util.h"
+ 
+Only in sprng2.0/TESTS: chisquare.c~
+diff -ur sprng2.0.old/TESTS/collisions.c sprng2.0/TESTS/collisions.c
+--- sprng2.0.old/TESTS/collisions.c	1999-06-29 12:42:11
++++ sprng2.0/TESTS/collisions.c	2023-04-12 21:29:39
+@@ -1,4 +1,6 @@
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include "tests.h"
+ #include <math.h>
+ 
+diff -ur sprng2.0.old/TESTS/coupon.c sprng2.0/TESTS/coupon.c
+--- sprng2.0.old/TESTS/coupon.c	1999-06-29 12:42:11
++++ sprng2.0/TESTS/coupon.c	2023-04-12 21:29:39
+@@ -1,4 +1,6 @@
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include "tests.h"
+ 
+ #ifndef ANSI_ARGS
+@@ -19,7 +21,7 @@
+ 
+ 
+ #ifdef __STDC__
+-main(int argc, char *argv[])
++int main(int argc, char *argv[])
+ #else
+ main(argc, argv)
+ int argc;
+diff -ur sprng2.0.old/TESTS/init_tests.c sprng2.0/TESTS/init_tests.c
+--- sprng2.0.old/TESTS/init_tests.c	1999-06-29 12:42:11
++++ sprng2.0/TESTS/init_tests.c	2023-04-12 21:29:39
+@@ -2,6 +2,7 @@
+ #include <mpi.h>
+ #endif
+ #include <stdio.h>
++#include <stdlib.h>
+ /*#define READ_FROM_STDIN*/   /* read random numbers from stdin */
+ #ifndef READ_FROM_STDIN
+ #include "sprng.h"
+diff -ur sprng2.0.old/TESTS/maxt.c sprng2.0/TESTS/maxt.c
+--- sprng2.0.old/TESTS/maxt.c	1999-06-29 12:42:11
++++ sprng2.0/TESTS/maxt.c	2023-04-12 21:29:39
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "tests.h"
+ #include <math.h>
+ 
+@@ -19,7 +20,7 @@
+ 
+ 
+ #ifdef __STDC__
+-main(int argc, char *argv[])
++int main(int argc, char *argv[])
+ #else
+ main(argc, argv)
+ int argc;
+diff -ur sprng2.0.old/TESTS/metropolis.c sprng2.0/TESTS/metropolis.c
+--- sprng2.0.old/TESTS/metropolis.c	1999-06-29 12:42:11
++++ sprng2.0/TESTS/metropolis.c	2023-04-12 21:32:42
+@@ -336,7 +336,7 @@
+ /* block_size*use_blocks sweeps through a lattice of size 
+ lattice_size*lattice_size using the Metropolis algorithm for the Ising model */
+ 
+-void main(int argc, char **argv)
++int main(int argc, char **argv)
+ {
+   /*--- Add rng_time as the 1st argument ---*/
+   int rng_type;
+diff -ur sprng2.0.old/TESTS/poker.c sprng2.0/TESTS/poker.c
+--- sprng2.0.old/TESTS/poker.c	1999-06-29 12:42:11
++++ sprng2.0/TESTS/poker.c	2023-04-12 21:30:28
+@@ -1,4 +1,6 @@
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include "tests.h"
+ #include <math.h>
+ 
+@@ -14,13 +16,13 @@
+ double poker ANSI_ARGS((long n, int k, int d));
+ double stirling ANSI_ARGS((int n, int m));
+ 
+-static int ncatagories = 0, *bins, *index, Bins_used=0;
++static int ncatagories = 0, *bins, *idx, Bins_used=0;
+ long *actual;
+ double *probability;
+ 
+ 
+ #ifdef __STDC__
+-main(int argc, char *argv[])
++int main(int argc, char *argv[])
+ #else
+ main(argc, argv)
+ int argc;
+@@ -71,7 +73,7 @@
+   free(bins);
+   free(actual);
+   free(probability);
+-  free(index);
++  free(idx);
+ 
+ #if defined(SPRNG_MPI)
+      MPI_Finalize();
+@@ -93,7 +95,7 @@
+   long sum;
+   
+   bins = (int *) mymalloc(d*sizeof(int));
+-  index = (int *) mymalloc((k+1)*sizeof(int));
++  idx = (int *) mymalloc((k+1)*sizeof(int));
+   pr = (double *) mymalloc((k+1)*sizeof(double));
+   temp = pow((double) d, - (double) k);
+   
+@@ -107,7 +109,7 @@
+   sum = 0;
+   for(i=1; i<=k; i++)
+   {
+-    index[i] = ncatagories;
++    idx[i] = ncatagories;
+     sum += n*pr[i];
+     
+     if(sum > 5 && i < k)
+@@ -125,7 +127,7 @@
+     probability[i] = 0.0;
+   
+   for(i=1; i<=k; i++)
+-    probability[index[i]] += pr[i];
++    probability[idx[i]] += pr[i];
+   
+   free(pr);
+ }
+@@ -157,7 +159,7 @@
+     for(j=0; j<d; j++)
+       sum += bins[j];
+     
+-    actual[index[sum]]++;
++    actual[idx[sum]]++;
+   }
+   
+   temp = chisquare(actual,probability,n, ncatagories, &Bins_used);
+diff -ur sprng2.0.old/TESTS/random_walk.c sprng2.0/TESTS/random_walk.c
+--- sprng2.0.old/TESTS/random_walk.c	1999-06-29 12:42:11
++++ sprng2.0/TESTS/random_walk.c	2023-04-12 21:37:31
+@@ -2,6 +2,7 @@
+    et al  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "tests.h"
+ #include <math.h>
+ 
+@@ -19,7 +20,7 @@
+ 
+ 
+ #ifdef __STDC__
+-main(int argc, char *argv[])
++int main(int argc, char *argv[])
+ #else
+ main(argc, argv)
+ int argc;
+Only in sprng2.0/TESTS: random_walk.c~
+diff -ur sprng2.0.old/TESTS/stirling.c sprng2.0/TESTS/stirling.c
+--- sprng2.0.old/TESTS/stirling.c	1999-06-29 12:42:11
++++ sprng2.0/TESTS/stirling.c	2023-04-12 21:29:39
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "util.h"
+ 
+ 
+diff -ur sprng2.0.old/TESTS/sum.c sprng2.0/TESTS/sum.c
+--- sprng2.0.old/TESTS/sum.c	1999-06-29 12:42:11
++++ sprng2.0/TESTS/sum.c	2023-04-12 21:31:36
+@@ -2,6 +2,7 @@
+ 
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #if defined(SPRNG_MPI)
+ #include "mpi.h"
+ #endif
+@@ -18,7 +19,7 @@
+ 
+ int group_size;
+ 
+-main(int argc, char *argv[])
++int main(int argc, char *argv[])
+ {
+   int ntests, n, *stream, i, j, k;
+   double result, rn, *temparray, *sumarray;
+diff -ur sprng2.0.old/TESTS/wolff.c sprng2.0/TESTS/wolff.c
+--- sprng2.0.old/TESTS/wolff.c	1999-06-29 12:42:11
++++ sprng2.0/TESTS/wolff.c	2023-04-12 21:32:30
+@@ -309,7 +309,7 @@
+ /* block_size*use_blocks sweeps through a lattice of size 
+    lattice_size*lattice_size using the Wolff algorithm for the Ising model */
+ 
+-void main(int argc, char **argv)
++int main(int argc, char **argv)
+ {
+   /*--- Add rng_type as the argument to the new interface ---*/
+   int rng_type;
+diff -ur sprng2.0.old/make.CHOICES sprng2.0/make.CHOICES
+--- sprng2.0.old/make.CHOICES	1999-06-29 12:42:11
++++ sprng2.0/make.CHOICES	2023-04-12 21:29:39
+@@ -62,8 +62,8 @@
+ # comment out if you want to exclude generator pmlcg which needs libgmp 
+ #---------------------------------------------------------------------------
+ 
+-PMLCGDEF = -DUSE_PMLCG
+-GMPLIB = -lgmp
++#PMLCGDEF = -DUSE_PMLCG
++#GMPLIB = -lgmp
+ 
+ ############################################################################
+ 
