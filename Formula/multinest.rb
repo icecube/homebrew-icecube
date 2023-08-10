@@ -7,8 +7,8 @@ class Multinest < Formula
   revision 1
   head "https://github.com/JohannesBuchner/MultiNest.git", branch: "master"
 
-  depends_on "cmake"    => :build
-  depends_on "gcc"      => :build
+  depends_on "cmake" => :build
+  depends_on "gcc"
   depends_on "open-mpi" => :optional
 
   patch :DATA
