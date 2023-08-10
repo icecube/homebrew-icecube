@@ -36,7 +36,7 @@ jobs:
 
       - run: brew test-bot --tap icecube/icecube --only-tap-syntax
 
-      - run: brew test-bot --tap icecube-icecube --only-formulae
+      - run: brew test-bot --tap icecube/icecube --only-formulae
         if: github.event_name == 'pull_request'
 
       - name: Upload bottles as artifact
