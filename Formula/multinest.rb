@@ -14,8 +14,6 @@ class Multinest < Formula
   patch :DATA
 
   def install
-    ENV.deparallelize
-
     system "cmake", ".", *std_cmake_args
     system "make"
     system "make", "install"
@@ -301,3 +299,28 @@ index 26636e0..3ee871f 100644
  # ============================
  # After compilation, copy the Fortran modules into the 'modules' directory.
  # ============================
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index b84be90..6514ff7 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -72,6 +72,7 @@ TARGET_LINK_LIBRARIES(multinest_static ${LAPACK_LIBRARIES})
+ 
+ # libmultinest.so
+ ADD_LIBRARY(multinest_shared SHARED ${MultiNest_SOURCE})
++ADD_DEPENDENCIES(multinest_shared multinest_static)
+ SET_TARGET_PROPERTIES(multinest_shared PROPERTIES LINKER_LANGUAGE Fortran 
+     VERSION ${MultiNest_VERSION} OUTPUT_NAME multinest
+ )
+@@ -88,10 +89,12 @@ if(NOT MPI_Fortran_FOUND)
+     MESSAGE(STATUS "MPI not found, only non-MPI MultiNest libraries will be built.")
+ else()
+     ADD_LIBRARY(multinest_mpi_static STATIC ${MultiNest_SOURCE})
++    ADD_DEPENDENCIES(multinest_mpi_static multinest_shared)
+     SET_TARGET_PROPERTIES(multinest_mpi_static PROPERTIES LINKER_LANGUAGE Fortran VERSION ${MultiNest_VERSION} OUTPUT_NAME multinest_mpi)
+     TARGET_LINK_LIBRARIES(multinest_mpi_static ${LAPACK_LIBRARIES} ${MPI_Fortran_LIBRARIES})
+     
+     ADD_LIBRARY(multinest_mpi_shared SHARED ${MultiNest_SOURCE})
++    ADD_DEPENDENCIES(multinest_mpi_shared multinest_mpi_static)
+     SET_TARGET_PROPERTIES(multinest_mpi_shared PROPERTIES LINKER_LANGUAGE Fortran VERSION ${MultiNest_VERSION} OUTPUT_NAME multinest_mpi)    
+     TARGET_LINK_LIBRARIES(multinest_mpi_shared ${LAPACK_LIBRARIES} ${MPI_Fortran_LIBRARIES})
+     
