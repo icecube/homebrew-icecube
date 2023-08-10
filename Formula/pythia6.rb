@@ -5,13 +5,7 @@ class Pythia6 < Formula
   version "6.4.16"
   sha256 "d613dcb27c905710e2f13a934913cc5545e3e5d0e477e580107385d9ef260056"
 
-  bottle do
-    root_url "http://code.icecube.wisc.edu/tools/bottles/"
-    sha256 cellar: :any, sierra: "c4cbfa937e47c342b589ce46267d2c25005c8c60a94b7f3e22b708b7a987c97b"
-    sha256 cellar: :any, mojave: "172116bf5100a0fb994bc59791cf1da07db0896ef7bdcea66d9c4af3b585641d"
-  end
-
-  depends_on "gcc"
+  depends_on "gcc" # for gfortran
 
   patch :p0 do
     # create Makefile
@@ -35,7 +29,9 @@ class Pythia6 < Formula
   end
 
   def install
-    ENV["FFLAGS"] = "-m64 -fPIC"
+    inreplace "Makefile", /^CFLAGS/, "#CFLAGS"
+    ENV["CFLAGS"] = "-m64 -fPIC -O3"
+    ENV["FFLAGS"] = "-m64 -fPIC -O3 -std=legacy"
     ENV["PREFIX"] = prefix.to_s
     ENV["FC"] = "gfortran"
     system "make", "install"
