@@ -4,6 +4,14 @@ class Pal < Formula
   url "https://github.com/Starlink/pal/releases/download/v0.9.8/pal-0.9.8.tar.gz"
   sha256 "191fde8c4f45d6807d4b011511344014966bb46e44029a4481d070cd5e7cc697"
 
+  bottle do
+    root_url "https://github.com/icecube/homebrew-icecube/releases/download/pal-0.9.8"
+    rebuild 1
+    sha256 cellar: :any, ventura:  "c6ce026563abafd4f225b4bc3b32fa34986441c20c94af279d95ff03b600c08b"
+    sha256 cellar: :any, monterey: "a42983cbded9505ff382fc58fab3ed62fc72c20d0a1c32a63686a1bfcd3bce2e"
+    sha256 cellar: :any, big_sur:  "7c2016815139a09a6bbc0b9e18c9e9830887252b3c83fc48c7c5c508c276b5e6"
+  end
+
   depends_on "erfa"
   # batteries not included
   if RUBY_PLATFORM.include?("darwin")
