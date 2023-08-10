@@ -5,6 +5,14 @@ class Sprng2 < Formula
   version "2.0a"
   sha256 "bcfa9e0501c4aba8f3e7bd7a728ae8d1e9ae771fc9d985d677f76f87b937454e"
 
+  bottle do
+    root_url "https://github.com/icecube/homebrew-icecube/releases/download/sprng2-2.0a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, ventura:  "d7d588dba22b1ab2f4f6d2d893f4c244919b3f394ce00d62f580cfb91142ccd7"
+    sha256 cellar: :any_skip_relocation, monterey: "405817a32afacc7c4006bad4e6d0d71ed4c88358b49667d021b46c167fdb9a6e"
+    sha256 cellar: :any_skip_relocation, big_sur:  "4d3bc4c46888aa53ed88077906ee15d96f4e87edab291394e3ced0bf0c2cd882"
+  end
+
   depends_on "gmp" if RUBY_PLATFORM.include? "darwin"
 
   # fixes the makefiles and inline assembly
