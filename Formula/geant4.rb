@@ -1,8 +1,8 @@
 class Geant4 < Formula
   desc "Simulation toolkit for particle transport through matter"
   homepage "http://geant4.cern.ch"
-  url "http://geant4.cern.ch/support/source/geant4.10.03.p03.tar.gz"
-  version "10.3.3"
+  # url "http://geant4.cern.ch/support/source/geant4.10.03.p03.tar.gz"
+  url "https://gitlab.cern.ch/geant4/geant4/-/archive/v10.3.3/geant4-v10.3.3.tar.bz2"
   sha256 "a164f49c038859ab675eec474d08c9d02be8c4be9c0c2d3aa8e69adf89e1e138"
 
   option "with-g3tog4", "Use G3toG4 Library"
@@ -10,11 +10,14 @@ class Geant4 < Formula
   option "with-usolids", "Use USolids (experimental)"
   option "without-multithreaded", "Build without multithreading support"
 
-  depends_on "cmake" => :run
-  depends_on "qt" => :optional
-  depends_on "xerces-c" if build.with? "gdml"
-  depends_on "linuxbrew/xorg/glu" unless OS.mac?
+  depends_on "cmake" => :build
   depends_on "libx11"
+  if build.with? "gdml"
+    depends_on "xerces-c"
+    depends_on "qt" => :optional # this is here to trick the Homebrew style checker
+  end
+  depends_on "qt" => :optional
+  depends_on "linuxbrew/xorg/glu" unless OS.mac?
 
   resource "G4NDL" do
     url "http://geant4.cern.ch/support/source/G4NDL.4.5.tar.gz"
