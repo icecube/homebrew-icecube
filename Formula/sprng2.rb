@@ -5,12 +5,6 @@ class Sprng2 < Formula
   version "2.0a"
   sha256 "bcfa9e0501c4aba8f3e7bd7a728ae8d1e9ae771fc9d985d677f76f87b937454e"
 
-  bottle do
-    root_url "http://code.icecube.wisc.edu/tools/bottles/"
-    sha256 cellar: :any_skip_relocation, sierra:      "7c9c081d9516a2cc3b130bc989e8cdf6db95d2ce5a778aa8e05ff41e86ecc298"
-    sha256 cellar: :any_skip_relocation, high_sierra: "57561fb57a1fc62aec9458c8d149813797300e7514bd74848aee0fad4af34fd7"
-  end
-
   depends_on "gmp" if RUBY_PLATFORM.include? "darwin"
 
   # fixes the makefiles and inline assembly
