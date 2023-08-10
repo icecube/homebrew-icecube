@@ -1,8 +1,8 @@
 class Nuflux < Formula
   desc "Library for calculating atmospheric neutrino fluxes"
   homepage "https://docs.icecube.aq/nuflux/main"
-  url "https://github.com/icecube/nuflux/archive/refs/tags/v2.0.3.tar.gz"
-  sha256 "b7a3c88107c73b81bf021acd5e6e69f9646811cc041b1dc14fffbdffcd736981"
+  url "https://github.com/icecube/nuflux/archive/refs/tags/v2.0.4.tar.gz"
+  sha256 "e7c95901ffc2d1a5c8cbe3f0a24c0277156762d131ef0facaad28b2b931bcfa7"
   license "LGPL-3.0-or-later"
 
   bottle do
