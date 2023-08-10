@@ -30,12 +30,10 @@ class Nuflux < Formula
   end
 
   def install
-    inreplace "meson_options.txt", "value : 'True'", "value : true"
-    inreplace "meson.build", "c++11", "c++14" # numpy wants 14 now
     mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
+      system "meson", "setup", *std_meson_args, ".."
+      system "meson", "compile"
+      system "meson", "install"
     end
 
     system python3, *Language::Python.setup_install_args(prefix, python3)
