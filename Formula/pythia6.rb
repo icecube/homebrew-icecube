@@ -5,6 +5,16 @@ class Pythia6 < Formula
   version "6.4.16"
   sha256 "d613dcb27c905710e2f13a934913cc5545e3e5d0e477e580107385d9ef260056"
 
+  bottle do
+    root_url "https://github.com/icecube/homebrew-icecube/releases/download/pythia6-6.4.16"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura:  "dcc312770768cf277ab883d6a76d24f2607fc25bf0f5c8e3761661bad515e977"
+    sha256 cellar: :any, arm64_monterey: "71030217c887e2040d05a8de165ea849f86543d32b2eb1c20a0a7301ab75c390"
+    sha256 cellar: :any, ventura:        "8b78e69060cf60be8e4e4f13278f477a7cfe66b18c9e32eff74c8aace910919b"
+    sha256 cellar: :any, monterey:       "ba8513bc7a57aef0a0f044c6c11b522ea5e5666fa4a13aefc19301d59175fa28"
+    sha256 cellar: :any, big_sur:        "4e06d064425fc47a35cdc5b28692849e7c0d516a0abfe3ef12dad071b1fee80d"
+  end
+
   depends_on "gcc" # for gfortran
 
   patch :p0 do
