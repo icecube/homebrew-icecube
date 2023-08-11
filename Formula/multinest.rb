@@ -7,6 +7,16 @@ class Multinest < Formula
   revision 1
   head "https://github.com/JohannesBuchner/MultiNest.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/icecube/homebrew-icecube/releases/download/multinest-3.8_1"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura:  "abb436cfa20bf793b574b2869d5b38ecee338ba74315b0c98ac8aa6b1ff4bef1"
+    sha256 cellar: :any, arm64_monterey: "89d0857304cc9d1b72db6ad82b7aa64b8d4b0b7cf2cc76c17f9881d6b7fb33ca"
+    sha256 cellar: :any, ventura:        "d126a9eefbb635751593621ae1d6e49bdd0218bd376c6bc286390f0d6783f2cb"
+    sha256 cellar: :any, monterey:       "a7a26831e72bce39857274189ca5160eec4b35e94fe655fdbab3e666baeb3828"
+    sha256 cellar: :any, big_sur:        "353c983d95d7e71a13c149d818a3953b5dc0a461781bc1ace6dee65678c4ccd8"
+  end
+
   depends_on "cmake" => :build
   depends_on "gcc"
   depends_on "open-mpi" => :optional
