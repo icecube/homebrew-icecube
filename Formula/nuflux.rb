@@ -1,8 +1,8 @@
 class Nuflux < Formula
   desc "Library for calculating atmospheric neutrino fluxes"
   homepage "https://docs.icecube.aq/nuflux/main"
-  url "https://github.com/icecube/nuflux/archive/refs/tags/v2.0.3.tar.gz"
-  sha256 "b7a3c88107c73b81bf021acd5e6e69f9646811cc041b1dc14fffbdffcd736981"
+  url "https://github.com/icecube/nuflux/archive/refs/tags/v2.0.4.tar.gz"
+  sha256 "e7c95901ffc2d1a5c8cbe3f0a24c0277156762d131ef0facaad28b2b931bcfa7"
   license "LGPL-3.0-or-later"
 
   depends_on "cmake" => :build
@@ -20,8 +20,6 @@ class Nuflux < Formula
   end
 
   def install
-    inreplace "meson_options.txt", "value : 'True'", "value : true"
-    inreplace "meson.build", "c++11", "c++14" # numpy wants 14 now
     mkdir "build" do
       system "meson", "setup", *std_meson_args, "--python.platlibdir", "#{lib}/python3.11/site-packages/",
         "--python.purelibdir", "#{lib}/python3.11/site-packages/", ".."
