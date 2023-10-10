@@ -16,4 +16,6 @@ jobs:
       - name: Brew Install
         run: brew install --build-from-source erfa pal photospline sprng2 nuflux
       - name: Brew Test
-        run: brew test photospline sprng2 nuflux erfa pal
+        run: |
+          eval "$(brew shellenv)"
+          brew test photospline sprng2 nuflux erfa pal
