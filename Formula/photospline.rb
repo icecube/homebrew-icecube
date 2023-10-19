@@ -1,8 +1,8 @@
 class Photospline < Formula
   desc "Fit and evaluate tensor-product B-spline surfaces"
   homepage "https://github.com/icecube/photospline"
-  url "https://github.com/icecube/photospline/archive/v2.2.0.tar.gz"
-  sha256 "81f79b42fd63e12c13cc369fb5c6ef356389f7c7aaa10a584aae2e22dba79ccf"
+  url "https://github.com/icecube/photospline/archive/v2.2.1.tar.gz"
+  sha256 "2b455daf8736d24bf57cae9eb67d48463a6c4bd6a66c3ffacf52296454bb82ad"
   revision 1
 
   # bottle do
