@@ -3,7 +3,7 @@ class Photospline < Formula
   homepage "https://github.com/icecube/photospline"
   url "https://github.com/icecube/photospline/archive/v2.2.0.tar.gz"
   sha256 "81f79b42fd63e12c13cc369fb5c6ef356389f7c7aaa10a584aae2e22dba79ccf"
-  revision 1
+  revision 0
 
   # bottle do
   #   root_url "https://github.com/icecube/homebrew-icecube/releases/download/photospline-2.1.1_1"
