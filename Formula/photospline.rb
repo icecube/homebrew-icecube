@@ -4,6 +4,12 @@ class Photospline < Formula
   url "https://github.com/icecube/photospline/archive/refs/tags/v2.2.1.tar.gz"
   sha256 "2b455daf8736d24bf57cae9eb67d48463a6c4bd6a66c3ffacf52296454bb82ad"
 
+  bottle do
+    root_url "https://github.com/icecube/homebrew-icecube/releases/download/photospline-2.2.1"
+    sha256 cellar: :any, ventura:  "dff01fe93fc47a66c18f90015a751a36338a01aad430acd3cc92bbc0c20b3c0e"
+    sha256 cellar: :any, monterey: "8adae5b3d188093908b8a29227dca5d89f436091f451ac3edd3b5bd52a736a48"
+  end
+
   # bottle do
   #   root_url "https://github.com/icecube/homebrew-icecube/releases/download/photospline-2.1.1_1"
   #   sha256 cellar: :any, arm64_ventura:  "4183c720d486d8a29e77006c8a85049513ab96ebb7b2955e0636a4694303d5d9"
