@@ -3,6 +3,7 @@ class Photospline < Formula
   homepage "https://github.com/icecube/photospline"
   url "https://github.com/icecube/photospline/archive/refs/tags/v2.2.1.tar.gz"
   sha256 "2b455daf8736d24bf57cae9eb67d48463a6c4bd6a66c3ffacf52296454bb82ad"
+  revision 1
 
   bottle do
     root_url "https://github.com/icecube/homebrew-icecube/releases/download/photospline-2.2.1"
@@ -22,7 +23,7 @@ class Photospline < Formula
   depends_on "cmake" => :build
   depends_on "cfitsio"
   depends_on "numpy"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "suite-sparse"
 
   def install
