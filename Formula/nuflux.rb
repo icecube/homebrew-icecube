@@ -4,6 +4,7 @@ class Nuflux < Formula
   url "https://github.com/icecube/nuflux/archive/refs/tags/v2.0.4.tar.gz"
   sha256 "e7c95901ffc2d1a5c8cbe3f0a24c0277156762d131ef0facaad28b2b931bcfa7"
   license "LGPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/icecube/homebrew-icecube/releases/download/nuflux-2.0.4"
@@ -22,17 +23,17 @@ class Nuflux < Formula
   depends_on "cfitsio"
   depends_on "icecube/icecube/photospline"
   depends_on "numpy"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
+  depends_on "python-setuptools"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
     mkdir "build" do
       system "meson", "setup", *std_meson_args, "--python.platlibdir", "#{lib}/python3.11/site-packages/",
-        "--python.purelibdir", "#{lib}/python3.11/site-packages/", ".."
-      # system "meson", *std_meson_args, ".."
+        "--python.purelibdir", "#{lib}/python3.12/site-packages/", ".."
       system "ninja", "-v"
       system "ninja", "install", "-v"
     end
