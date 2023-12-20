@@ -32,7 +32,7 @@ class Nuflux < Formula
 
   def install
     mkdir "build" do
-      system "meson", "setup", *std_meson_args, "--python.platlibdir", "#{lib}/python3.11/site-packages/",
+      system "meson", "setup", *std_meson_args, "--python.platlibdir", "#{lib}/python3.12/site-packages/",
         "--python.purelibdir", "#{lib}/python3.12/site-packages/", ".."
       system "ninja", "-v"
       system "ninja", "install", "-v"
