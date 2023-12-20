@@ -23,8 +23,8 @@ class Nuflux < Formula
   depends_on "cfitsio"
   depends_on "icecube/icecube/photospline"
   depends_on "numpy"
-  depends_on "python@3.12"
   depends_on "python-setuptools"
+  depends_on "python@3.12"
 
   def python3
     "python3.12"
