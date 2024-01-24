@@ -5,15 +5,6 @@ class Nuflux < Formula
   sha256 "65cb0c284cc46e1006f1eb1fba296b84e30a148d4386887de152961ba711d6b8"
   license "LGPL-3.0-or-later"
 
-  bottle do
-    root_url "https://github.com/icecube/homebrew-icecube/releases/download/nuflux-2.0.4"
-    sha256 arm64_ventura:  "28c738c6ce67d1db87a10cf82dcf1c8e493024b7d64a3b5b9dfcecbda7aa3f19"
-    sha256 arm64_monterey: "c854abff56dae79e91a75e54506e9e7505eb0787f76b6a1f31f4485b40eb9804"
-    sha256 ventura:        "5ba8c21b0d93a281602a12d2636dbd112bc1dd951e292ffe9f9b1fc129e268a5"
-    sha256 monterey:       "91592a23872968fcc9abace224facf529b5e59ba84d678b5097800fb4c1fbd67"
-    sha256 big_sur:        "d85ea4e6caaa664388136503628ee81e50f5503a4c3ca0607d706744e412fe72"
-  end
-
   depends_on "cmake" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
