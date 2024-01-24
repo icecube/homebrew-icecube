@@ -1,8 +1,8 @@
 class Nuflux < Formula
   desc "Library for calculating atmospheric neutrino fluxes"
   homepage "https://docs.icecube.aq/nuflux/main"
-  url "https://github.com/icecube/nuflux/archive/refs/tags/v2.0.4.tar.gz"
-  sha256 "e7c95901ffc2d1a5c8cbe3f0a24c0277156762d131ef0facaad28b2b931bcfa7"
+  url "https://github.com/icecube/nuflux/archive/refs/tags/v2.0.5.tar.gz"
+  sha256 "65cb0c284cc46e1006f1eb1fba296b84e30a148d4386887de152961ba711d6b8"
   license "LGPL-3.0-or-later"
 
   bottle do
@@ -22,22 +22,20 @@ class Nuflux < Formula
   depends_on "cfitsio"
   depends_on "icecube/icecube/photospline"
   depends_on "numpy"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
     mkdir "build" do
-      system "meson", "setup", *std_meson_args, "--python.platlibdir", "#{lib}/python3.11/site-packages/",
-        "--python.purelibdir", "#{lib}/python3.11/site-packages/", ".."
-      # system "meson", *std_meson_args, ".."
+      ENV["BOOST_ROOT"] = HOMEBREW_PREFIX.to_s
+      system "meson", "setup", *std_meson_args, "--python.platlibdir",
+        "#{prefix}/"+Language::Python.site_packages(python3), ".."
       system "ninja", "-v"
       system "ninja", "install", "-v"
     end
-
-    system python3, *Language::Python.setup_install_args(prefix, python3)
   end
 
   test do
