@@ -18,10 +18,10 @@ class Photospline < Formula
 
   test do
     # just make sure it's linked correctly
-    system Formula["python@3.12"].opt_bin/"python3", "--version"
-    system Formula["python@3.12"].opt_bin/"python3", "-m", "site"
+    system Formula["python@3.12"].opt_bin/"python3.12", "--version"
+    system Formula["python@3.12"].opt_bin/"python3.12", "-m", "site"
     # system "ls", "-l", "/usr/local/lib/python*/site-packages"
     # system "find", "/usr/local/Cellar/photospline"
-    system Formula["python@3.12"].opt_bin/"python3, "-c", "import photospline"
+    system Formula["python@3.12"].opt_bin/"python3.12", "-c", "import photospline"
   end
 end
