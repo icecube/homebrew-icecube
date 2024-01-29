@@ -11,9 +11,9 @@ jobs:
         os: [
           #[self-hosted, ARM64, ventura],   # icecube self-hosted builder
           #[self-hosted, ARM64, monterey],  # @nega0  self-hosted builder
+          [macos-14],  # github cloud builder, x86_64, sonoma
           [macos-13],  # github cloud builder, x86_64, ventura
           [macos-12],  # github cloud builder, x86_64, monterey
-          [macos-11],  # github cloud builder, x86_64, catalina
         ]
     runs-on: ${{ matrix.os }}
     steps:

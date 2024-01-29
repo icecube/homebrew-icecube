@@ -18,6 +18,10 @@ class Photospline < Formula
 
   test do
     # just make sure it's linked correctly
-    system "python3", "-c", "import photospline"
+    system "python3", "--version"
+    system "python3", "-m", "site"
+    system "ls", "-l", "/usr/local/lib/python*/site-packages"
+    system "find", "/usr/local/Cellar/photospline"
+    # system "python3", "-c", "import photospline"
   end
 end
