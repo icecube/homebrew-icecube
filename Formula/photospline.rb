@@ -17,7 +17,7 @@ class Photospline < Formula
   end
 
   test do
-    # just make sure it's linked correctly
+    #  just make sure it's linked correctly
     system Formula["python@3.12"].opt_bin/"python3.12", "-c", "import photospline"
   end
 end
