@@ -11,6 +11,8 @@ jobs:
         os: [
           #[self-hosted, ARM64, ventura],   # icecube self-hosted builder
           #[self-hosted, ARM64, monterey],  # @nega0  self-hosted builder
+          [macos-15],  # github cloud builder, arm64,  sequoia
+          [macos-14],  # github cloud builder, arm64,  sonoma
           [macos-13],  # github cloud builder, x86_64, ventura
           [macos-12],  # github cloud builder, x86_64, monterey
         ]
@@ -21,16 +23,11 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@master
 
       - name: Cache Homebrew Bundler RubyGems
-        id: cache
         uses: actions/cache@v4
         with:
           path: ${{ steps.set-up-homebrew.outputs.gems-path }}
-          key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
-          restore-keys: ${{ runner.os }}-rubygems-
-
-      - name: Install Homebrew Bundler RubyGems
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: brew install-bundler-gems
+          key: ${{ matrix.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: ${{ matrix.os }}-rubygems-
 
       - run: brew test-bot --tap icecube/icecube --only-cleanup-before
 
@@ -43,7 +40,7 @@ jobs:
 
       - name: Upload bottles as artifact
         if: always() && github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: bottles
+          name: bottles_${{ matrix.os }}
           path: '*.bottle.*'
