@@ -6,8 +6,8 @@ class Photospline < Formula
 
   bottle do
     root_url "https://github.com/icecube/homebrew-icecube/releases/download/photospline-2.4.1"
-    sha256 cellar: :any, sonoma:  "33e36eafc6b5f8288c4c5920d1b9a6df2df07bb7ca0e5fef339e5eb2665fae9c"
-    sha256 cellar: :any, sequoia: "504a5da0876defcedad0e8d3f6f588584e82609a930e89ecef9a549b1dd2ba21"
+    sha256 cellar: :any, arm64_sequoia: "0e019f738a17ace7997599a189d825bc7e199b69bc4113a0d34a5eb2f7f3f0ce"
+    sha256 cellar: :any, arm64_sonoma:  "812b49cbf98d0556ba27b3c952d486d9295e63668bd409a8723a0cad6ede5437"
   end
 
   depends_on "cmake" => :build
