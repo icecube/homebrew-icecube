@@ -3,6 +3,7 @@ class Photospline < Formula
   homepage "https://github.com/icecube/photospline"
   url "https://github.com/icecube/photospline/archive/refs/tags/v2.4.1.tar.gz"
   sha256 "c8bfd2a087300f3f217cecfe3e4354be4e2a485dfc503420c8ebbffeec5adf03"
+  revision 1
 
   bottle do
     root_url "https://github.com/icecube/homebrew-icecube/releases/download/photospline-2.4.1"
@@ -12,9 +13,7 @@ class Photospline < Formula
 
   depends_on "cmake" => :build
   depends_on "cfitsio"
-  depends_on "metis"
   depends_on "numpy"
-  depends_on "openblas"
   depends_on "python@3.13"
   depends_on "suite-sparse"
 
@@ -23,8 +22,8 @@ class Photospline < Formula
     system "make", "install"
   end
 
-  # test do
-  #   # just make sure it's linked correctly
-  #   system Formula["python@3.13"].opt_bin/"python@3.13", "-c", "import photospline"
-  # end
+  test do
+    # just make sure it's linked correctly
+    system Formula["python@3.13"].opt_bin/"python3", "-c", "import photospline"
+  end
 end
