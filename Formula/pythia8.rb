@@ -7,9 +7,9 @@ class Pythia8 < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    root_url "https://github.com/icecube/homebrew-icecube/releases/download/pythia-bottle-8351"
-    sha256 cellar: :any, arm64_sequoia: "428f9a2f2211efa5d9c1122df8b7d51fdfe0c21eb263cd21668c29da369d47e3"
-    sha256 cellar: :any, arm64_sonoma:  "0a7e9f36338c32bd4bbedd40125d999441ac5fbb45330dcc2dc925cdafbd17e9"
+    root_url "https://github.com/icecube/homebrew-icecube/releases/download/pythia8-8.315"
+    sha256 arm64_sequoia: "75b6e8e8642d3923eb478bb88125c268bcdd865de287e8cf0fa4bb4facb46af2"
+    sha256 arm64_sonoma:  "75fb93d1289d7d06758fbae36eb4cb595c2ae97c3f6011894ad94556bee64415"
   end
 
   depends_on "hdf5"
