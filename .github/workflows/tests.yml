@@ -15,6 +15,8 @@ jobs:
           macos-14,  # github cloud builder, arm64,  sonoma
           #macos-13,  # github cloud builder, x86_64, ventura
           #macos-12,  # github cloud builder, x86_64, monterey
+          macos-15-large,  # github cloud builder, x86_64,  sequoia
+          macos-14-large,  # github cloud builder, x86_64,  sonoma
         ]
     runs-on: ${{ matrix.os }}
     steps:
