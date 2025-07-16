@@ -6,7 +6,7 @@ class Erfa < Formula
 
   bottle do
     root_url "https://github.com/icecube/homebrew-icecube/releases/download/erfa-1.7.2"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any, arm64_ventura:  "c75179c457425c26cdcc4e099ba6dd3d6f84d9a585d5fe9ff3ea6ff76a1bca51"
     sha256 cellar: :any, arm64_monterey: "b0ceb39d3db954bda3c1adc951d1f5455f346e6b8f4d4034a9af76e31bdbb902"
     sha256 cellar: :any, ventura:        "a01a49c8dcd081987d329ebf203d75a86f4533282b32e550b7cb548a5d50a3ed"
