@@ -5,6 +5,12 @@ class Geant4 < Formula
   sha256 "2272ff8d67ac01419ea2dc3a0877c68c6027e936a1c391072cc569902db360a9"
   license ""
 
+  bottle do
+    root_url "https://github.com/icecube/homebrew-icecube/releases/download/geant4-11.3.2"
+    sha256 arm64_sequoia: "b9ab9034ae332fe2bd8309fd8ef52d458ac5f251b6725e7232b736300a27736f"
+    sha256 arm64_sonoma:  "d2d2dafb2a4214bc4dd461cb52fefe2ad6fd5925e59c2440b674c0f47dcd4893"
+  end
+
   depends_on "cmake" => :build
 
   # Additional dependency
