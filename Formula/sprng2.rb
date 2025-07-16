@@ -28,7 +28,7 @@ class Sprng2 < Formula
     # fix permissions
     chmod 0644, Dir["include/*.h"]
 
-    sprnginclude = include+"sprng"
+    sprnginclude = include/"sprng"
     sprnginclude.install Dir["include/*.h"]
     lib.install "lib/libsprng.a"
   end
