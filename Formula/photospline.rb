@@ -3,6 +3,7 @@ class Photospline < Formula
   homepage "https://github.com/icecube/photospline"
   url "https://github.com/icecube/photospline/archive/refs/tags/v2.4.2.tar.gz"
   sha256 "b3873fa475434b6ff3e1013a638d5a04970d21ced5ef32af5dd6a6f4fbb79b0c"
+  revision 1
   head "https://github.com/icecube/photospline.git", branch: "master"
 
   bottle do
@@ -19,6 +20,7 @@ class Photospline < Formula
   depends_on "suite-sparse"
 
   def install
+    ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?
     system "cmake", ".", *std_cmake_args
     system "make", "install"
   end
