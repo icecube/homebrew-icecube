@@ -7,9 +7,9 @@ class Photospline < Formula
   head "https://github.com/icecube/photospline.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/icecube/homebrew-icecube/releases/download/photospline-2.4.2"
-    sha256 cellar: :any, arm64_sequoia: "7dc29ce6f297acd43706c39674b54f06cf5c1a7ee07be8c263ea3878406885cd"
-    sha256 cellar: :any, arm64_sonoma:  "3ccbe489f4a05a0c2f0dbd5ea45c882ab6ee18bbc080a7be06af1fa4bf6f4145"
+    root_url "https://github.com/icecube/homebrew-icecube/releases/download/photospline-2.4.2_1"
+    sha256 cellar: :any, arm64_sequoia: "cb39e2a29d78aa531c335ded2ce7c8bc1a2a5faf6f3ca59fdd386b847ae23c70"
+    sha256 cellar: :any, arm64_sonoma:  "d421dfcf8546660516cc7dd4174f2787845e1d465fb448059a4f936f308a34c7"
   end
 
   depends_on "cmake" => :build
