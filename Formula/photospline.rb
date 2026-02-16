@@ -15,6 +15,7 @@ class Photospline < Formula
   depends_on "numpy"
   depends_on "python@3.14"
   depends_on "suite-sparse"
+  depends_on "openblas"
 
   def install
     system "cmake", ".", *std_cmake_args
