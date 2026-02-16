@@ -10,6 +10,8 @@ class Photospline < Formula
     sha256 cellar: :any, arm64_sonoma:  "0a7e9f36338c32bd4bbedd40125d999441ac5fbb45330dcc2dc925cdafbd17e9"
   end
 
+  head "https://github.com/icecube/photospline.git", branch: "master"
+
   depends_on "cmake" => :build
   depends_on "cfitsio"
   depends_on "numpy"
